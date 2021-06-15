@@ -4,6 +4,8 @@
 package-lock.json
 composer.phar
 composer.lock
+.php_cs.cache
+.php-cs-fixer.cache
 phpunit.xml
 .phpunit.result.cache
 .DS_Store

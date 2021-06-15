@@ -5,7 +5,8 @@ namespace ThinkStudio\HtmlField;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Html extends Field {
+class Html extends Field
+{
     /**
      * The field's component.
      *
@@ -21,8 +22,9 @@ class Html extends Field {
      * @see ResolvesFields::removeNonUpdateFields
      * @inheritDoc
      */
-    public function resolve( $resource, $attribute = null ) {
-        parent::resolve( $resource, $attribute );
+    public function resolve($resource, $attribute = null)
+    {
+        parent::resolve($resource, $attribute);
         $this->attribute = 'TemporaryNotComputedField';
     }
 
@@ -32,7 +34,8 @@ class Html extends Field {
      *
      * @return mixed|void
      */
-    public function fill( NovaRequest $request, $model ) {
+    public function fill(NovaRequest $request, $model)
+    {
         // nothing
     }
 
@@ -41,11 +44,16 @@ class Html extends Field {
      *
      * @return array
      */
-    public function jsonSerialize() {
-        return array_merge( parent::jsonSerialize(), [
+    public function jsonSerialize()
+    {
+        // Generate value from Computed avan for creation state
+        if (!$this->value && ($this->attribute === 'ComputedField')) {
+            $this->resolve($this->resource);
+        }
+
+        return array_merge(parent::jsonSerialize(), [
             'asHtml' => true,
             'value'  => $this->value,
-        ] );
+        ]);
     }
-
 }
