@@ -16,6 +16,13 @@ class Html extends Field
 
     public $showOnCreation = false;
 
+    public function __construct($name, $attribute = null, callable $resolveCallback = null)
+    {
+        parent::__construct($name, $attribute, $resolveCallback);
+        $this->attribute = 'TemporaryNotComputedField';
+    }
+
+
     /**
      * Resolve the field's value for display.
      *
@@ -25,6 +32,7 @@ class Html extends Field
      */
     public function resolveForDisplay($resource, $attribute = null)
     {
+        $this->attribute = 'ComputedField';
         parent::resolveForDisplay($resource, $attribute);
         $this->attribute = 'ComputedField';
     }
@@ -36,6 +44,7 @@ class Html extends Field
      */
     public function resolve($resource, $attribute = null)
     {
+        $this->attribute = 'ComputedField';
         parent::resolve($resource, $attribute);
         $this->attribute = 'TemporaryNotComputedField';
     }
@@ -58,11 +67,6 @@ class Html extends Field
      */
     public function jsonSerialize()
     {
-        // Generate value from Computed avan for creation state
-        if (!$this->value && ($this->attribute === 'ComputedField')) {
-            $this->resolve($this->resource);
-        }
-
         return array_merge(parent::jsonSerialize(), [
             'asHtml' => true,
             'value'  => $this->value,
