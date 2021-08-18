@@ -67,6 +67,11 @@ class Html extends Field
      */
     public function jsonSerialize()
     {
+        // AD-hoc for using filed in actions.
+        if (!$this->value && $this->attribute == 'TemporaryNotComputedField') {
+            $this->resolve($this->resource);
+        }
+
         return array_merge(parent::jsonSerialize(), [
             'asHtml' => true,
             'value'  => $this->value,
