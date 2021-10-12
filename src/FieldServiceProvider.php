@@ -16,9 +16,15 @@ class FieldServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::serving(function (ServingNova $event) {
-            Nova::script('html-field', __DIR__.'/../dist/js/field.js');
-            Nova::style('html-field', __DIR__.'/../dist/css/field.css');
+            Nova::script('html-field', __DIR__ . '/../dist/js/field.js');
+            Nova::style('html-field', __DIR__ . '/../dist/css/field.css');
         });
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-html-field');
+
+        $this->publishes([
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/nova-html-field'),
+        ]);
     }
 
     /**
