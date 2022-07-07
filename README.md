@@ -1,8 +1,13 @@
 # Laravel nova HTML Field
 
+| Nova | Package |
+|------|------|
+| V1   | V1   |
+| V4   | V2   |
+
 ## Usage Warning!
 
-If you want use html only on **Index** or **Details** screen, then please use default laravel nova functionality:
+If you want use html only on **Index (Preview)** or **Details** screen, then please use default laravel nova functionality:
 
 ```injectablephp
 \Laravel\Nova\Fields\Text::make('Preview', function () {

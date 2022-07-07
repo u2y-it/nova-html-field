@@ -20,11 +20,12 @@ class FieldServiceProvider extends ServiceProvider
             Nova::style('html-field', __DIR__ . '/../dist/css/field.css');
         });
 
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/nova-html-field'),
+            ], 'views');
+        }
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-html-field');
-
-        $this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/nova-html-field'),
-        ]);
     }
 
     /**

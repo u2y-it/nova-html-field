@@ -1,0 +1,52 @@
+Arguments: 
+  /home/yaroslawww/.nvm/versions/node/v14.17.0/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/yaroslawww/.yarn/bin:/home/yaroslawww/.nvm/versions/node/v14.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/wine-stable/bin:/work/www/php_repos/nova-html-field/node_modules/.bin:/home/yaroslawww/.config/composer/vendor/bin:/usr/local/go/bin:/usr/local/tinygo/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.17.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /work/www/php_repos/nova-html-field/package.json: Unexpected token } in JSON at position 391
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+      "private": true,
+      "scripts": {
+          "dev": "npm run development",
+          "development": "mix",
+          "watch": "mix watch",
+          "watch-poll": "mix watch -- --watch-options-poll=1000",
+          "hot": "mix watch --hot",
+          "prod": "npm run production",
+          "production": "mix --production",
+          "nova:install": "npm --prefix='../../vendor/laravel/nova' ci",
+      },
+      "devDependencies": {
+          "@vue/compiler-sfc": "^3.2.22",
+          "form-backend-validation": "^2.3.3",
+          "laravel-mix": "^6.0.41",
+          "lodash": "^4.17.21",
+          "postcss": "^8.3.11",
+          "vue-loader": "^16.8.3"
+      },
+      "dependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

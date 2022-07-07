@@ -7,14 +7,12 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Html extends Field
 {
-    /**
-     * The field's component.
-     *
-     * @var string
-     */
-    public $component = 'html-field';
-
+    public $component      = 'html-field';
+    public $showOnIndex    = false;
     public $showOnCreation = false;
+    public $showOnUpdate   = false;
+    public $showOnPreview  = true;
+
 
     public function __construct($name, $attribute = null, callable $resolveCallback = null)
     {
@@ -49,23 +47,12 @@ class Html extends Field
         $this->attribute = 'TemporaryNotComputedField';
     }
 
-    /**
-     * @param NovaRequest $request
-     * @param object $model
-     *
-     * @return mixed|void
-     */
     public function fill(NovaRequest $request, $model)
     {
         // nothing
     }
 
-    /**
-     * Prepare the element for JSON serialization.
-     *
-     * @return array
-     */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         // AD-hoc for using filed in actions.
         if (!$this->value && $this->attribute == 'TemporaryNotComputedField') {
