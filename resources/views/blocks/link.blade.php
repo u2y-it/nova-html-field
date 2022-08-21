@@ -6,7 +6,7 @@
         @else
             target="_blank"
         @endif
-        class="block mx-auto {{!empty($class)?$class:'text-primary'}}">
+        class="block mx-auto {{!empty($class)?$class:'link-default'}}">
         @if(isset($linkText))
             {!! $linkText !!}
         @else
