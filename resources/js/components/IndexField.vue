@@ -1,7 +1,8 @@
 <template>
     <div :class="`text-${field.textAlign}`">
         <template v-if="hasValue">
-            <div v-html="field.value"></div>
+            <div v-if="clickable" @click.stop v-html="field.value"  />
+            <div v-else v-html="field.value" />
         </template>
         <p v-else>&mdash;</p>
     </div>
@@ -14,6 +15,9 @@ export default {
     computed: {
         hasValue() {
             return this.field.value !== null
+        },
+        clickable() {
+            return !!this.field.clickable
         },
     },
 }

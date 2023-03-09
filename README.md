@@ -23,20 +23,18 @@ The package was created only to add such a feature to the **Update** and **Creat
 Example: 
 ```injectablephp
 Html::make('Preview', function () {
-    return view('custom-link', [
+    return view('nova-html-field::blocks.link', [
         'url' => url('/preview'),
-        'id' => $this->id,
+        'linkText' => 'Preview',
+        'target' => '_blank',
     ])->render();
-});
+})->clickable();
 ```
 
 ```injectablephp
-Html::make('Docs', function () {
-    return view('custom-link', [
-        'url' => url('/docs'),
-    ])->render();
-})
+Html::make('Docs', fn() => view('nova-html-field::blocks.link', [ 'href' => $this->resource->pdfUrl(), ])->render() )
     ->showOnCreating()
+     ->clickable()
     ->help('Link to documentation');
 ```
 

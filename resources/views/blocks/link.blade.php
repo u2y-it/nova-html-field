@@ -4,7 +4,7 @@
         @if(!empty($target))
             target="{{$target}}"
         @else
-            target="_blank"
+            target="_self"
         @endif
         class="block mx-auto {{!empty($class)?$class:'link-default'}}">
         @if(isset($linkText))
@@ -21,4 +21,6 @@
             </svg>
         @endif
     </a>
+@else
+    <span>&mdash;</span>
 @endif

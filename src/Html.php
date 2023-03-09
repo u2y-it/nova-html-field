@@ -13,6 +13,7 @@ class Html extends Field
     public $showOnUpdate   = false;
     public $showOnPreview  = true;
 
+    public bool $clickable = false;
 
     public function __construct($name, $attribute = null, callable $resolveCallback = null)
     {
@@ -20,12 +21,18 @@ class Html extends Field
         $this->attribute = 'TemporaryNotComputedField';
     }
 
+    public function clickable(bool $clickable = true): static
+    {
+        $this->clickable = $clickable;
+
+        return $this;
+    }
 
     /**
      * Resolve the field's value for display.
      *
-     * @param  mixed  $resource
-     * @param  string|null  $attribute
+     * @param mixed $resource
+     * @param string|null $attribute
      * @return void
      */
     public function resolveForDisplay($resource, $attribute = null)
@@ -60,8 +67,9 @@ class Html extends Field
         }
 
         return array_merge(parent::jsonSerialize(), [
-            'asHtml' => true,
-            'value'  => $this->value,
+            'asHtml'    => true,
+            'value'     => $this->value,
+            'clickable' => $this->clickable,
         ]);
     }
 }
