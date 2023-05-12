@@ -24,11 +24,31 @@ Example:
 ```injectablephp
 Html::make('Preview', function () {
     return view('nova-html-field::blocks.link', [
-        'url' => url('/preview'),
+        'href' => url('/preview'),
         'linkText' => 'Preview',
         'target' => '_blank',
     ])->render();
 })->clickable();
+
+Html::make('Preview', function () {
+    return view('nova-html-field::blocks.links', [
+        'links' => [
+            [
+                'href' => url('/preview'),
+                'title' => 'title',
+                'target' => '_blank',
+            ],
+            [
+                'href' => url('/preview'),
+                'title' => 'title',
+                'target' => '_blank',
+            ],
+        ]
+    ])->render();
+})
+    ->clickable()
+    ->showOnIndex()
+    ->showOnPreview(),
 ```
 
 ```injectablephp

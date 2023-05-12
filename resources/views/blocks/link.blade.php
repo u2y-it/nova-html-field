@@ -6,6 +6,9 @@
         @else
             target="_self"
         @endif
+        @if(!empty($title))
+            title="{{$title}}"
+        @endif
         class="block mx-auto {{!empty($class)?$class:'link-default'}}">
         @if(isset($linkText))
             {!! $linkText !!}
