@@ -1,5 +1,5 @@
 @if(!empty($links) && is_array($links))
-    <div class="flex flex-wrap justify-start space-x-2">
+    <div class="flex justify-start space-x-2">
         @foreach($links as $link)
             @if(!empty($link['href']))
                 <a
