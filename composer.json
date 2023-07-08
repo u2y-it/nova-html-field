@@ -1,10 +1,11 @@
 {
-    "name": "yaroslawww/nova-html-field",
+    "name": "think.studio/nova-html-field",
     "description": "HTML Laravel Nova field. (alternative of text field)",
     "keywords": [
         "laravel",
         "html-field"
     ],
+    "homepage": "https://github.com/dev-think-one/nova-html-field",
     "license": "MIT",
     "authors": [
         {

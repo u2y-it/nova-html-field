@@ -1,5 +1,13 @@
 # Laravel nova HTML Field
 
+![Packagist License](https://img.shields.io/packagist/l/think.studio/nova-html-field?color=%234dc71f)
+[![Packagist Version](https://img.shields.io/packagist/v/think.studio/nova-html-field)](https://packagist.org/packages/think.studio/nova-html-field)
+[![Total Downloads](https://img.shields.io/packagist/dt/think.studio/nova-html-field)](https://packagist.org/packages/think.studio/nova-html-field)
+[![Build Status](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/badges/build.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/build-status/main)
+[![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/?branch=main)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/?branch=main)
+
+
 | Nova | Package |
 |------|------|
 | V1   | V1   |
@@ -18,10 +26,19 @@ If you want use html only on **Index (Preview)** or **Details** screen, then ple
 })->asHtml();
 ```
 
-The package was created to add such a feature also to the **Update** and **Create** screens. 
-By default, **Create** screen is disabled.
+The package was created to add such a feature also to the **Update** and **Create** screens.
+(By default, **Create** screen is disabled.)
 
-Example: 
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require think.studio/nova-html-field
+```
+
+## Usage
+ 
 ```php
 Html::make('Preview', function () {
     return view('nova-html-field::blocks.link', [
@@ -52,19 +69,11 @@ Html::make('Preview', function () {
     ->showOnPreview(),
 ```
 
-```injectablephp
+```php
 Html::make('Docs', fn() => view('nova-html-field::blocks.link', [ 'href' => $this->resource->pdfUrl(), ])->render() )
     ->showOnCreating()
      ->clickable()
     ->help('Link to documentation');
-```
-
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require yaroslawww/nova-html-field
 ```
 
 ## Credits
