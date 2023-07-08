@@ -7,5 +7,4 @@ mix
     .js('resources/js/field.js', 'js')
     .vue({ version: 3 })
     .sass('resources/sass/field.scss', 'css')
-    .nova('yaroslawww/nova-html-field')
-
+    .nova('think.studio/nova-html-field')
