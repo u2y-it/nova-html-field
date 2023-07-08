@@ -7,7 +7,6 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/?branch=main)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/dev-think-one/nova-html-field/?branch=main)
 
-
 | Nova | Package |
 |------|------|
 | V1   | V1   |
