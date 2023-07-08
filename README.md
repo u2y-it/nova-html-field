@@ -18,10 +18,11 @@ If you want use html only on **Index (Preview)** or **Details** screen, then ple
 })->asHtml();
 ```
 
-The package was created only to add such a feature to the **Update** and **Create** screen. By default, **Create** screen is disabled.
+The package was created to add such a feature also to the **Update** and **Create** screens. 
+By default, **Create** screen is disabled.
 
 Example: 
-```injectablephp
+```php
 Html::make('Preview', function () {
     return view('nova-html-field::blocks.link', [
         'href' => url('/preview'),

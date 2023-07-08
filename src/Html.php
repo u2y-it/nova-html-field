@@ -15,9 +15,9 @@ class Html extends Field
 
     public bool $clickable = false;
 
-    public function __construct($name, $attribute = null, callable $resolveCallback = null)
+    public function __construct($name, ?\Closure $callback = null)
     {
-        parent::__construct($name, $attribute, $resolveCallback);
+        parent::__construct($name, $callback ?? (fn () => null));
         $this->attribute = 'TemporaryNotComputedField';
     }
 
@@ -62,7 +62,7 @@ class Html extends Field
     public function jsonSerialize(): array
     {
         // AD-hoc for using filed in actions.
-        if (!$this->value && $this->attribute == 'TemporaryNotComputedField') {
+        if ($this->resource && !$this->value && $this->attribute == 'TemporaryNotComputedField') {
             $this->resolve($this->resource);
         }
 

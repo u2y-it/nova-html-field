@@ -2,11 +2,10 @@
 
 namespace ThinkStudio\HtmlField;
 
-use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 
-class FieldServiceProvider extends ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap any application services.

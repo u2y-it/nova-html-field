@@ -1,4 +1,6 @@
 /.idea
+/build
+/coverage
 /auth.json
 /vendor
 /node_modules
@@ -7,6 +9,7 @@ composer.phar
 composer.lock
 phpunit.xml
 .phpunit.result.cache
+/.phpunit.cache
 .DS_Store
 Thumbs.db
 .php_cs.cache
