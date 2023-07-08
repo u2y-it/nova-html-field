@@ -6,6 +6,7 @@ build:
     analysis:
       image: default-bionic
       environment:
+        node: 16
         php:
           version: 8.1
           ini:
