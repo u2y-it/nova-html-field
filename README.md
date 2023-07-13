@@ -16,7 +16,7 @@
 
 If you want use html only on **Index (Preview)** or **Details** screen, then please use default laravel nova functionality:
 
-```injectablephp
+```php
 \Laravel\Nova\Fields\Text::make('Preview', function () {
     return view('custom-link', [
         'url' => url('/preview'),
