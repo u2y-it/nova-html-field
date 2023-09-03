@@ -2,7 +2,6 @@
 
 namespace ThinkStudio\HtmlField\Tests;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Nova\NovaCoreServiceProvider;
 use ThinkStudio\HtmlField\ServiceProvider;
 

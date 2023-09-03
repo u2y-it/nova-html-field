@@ -19,7 +19,7 @@ class HtmlFieldTest extends TestCase
     /** @test */
     public function change_clickable()
     {
-        $htmlField = Html::make('Foo', fn() => 'bar');
+        $htmlField           = Html::make('Foo', fn () => 'bar');
         $htmlField->resource = new Article();
 
         $this->assertFalse($htmlField->clickable);
@@ -31,7 +31,7 @@ class HtmlFieldTest extends TestCase
     /** @test */
     public function callback_on_display()
     {
-        $htmlField = Html::make('Foo', fn() => 'bar');
+        $htmlField = Html::make('Foo', fn () => 'bar');
 
         $htmlField->resolveForDisplay(null);
 
@@ -41,7 +41,7 @@ class HtmlFieldTest extends TestCase
     /** @test */
     public function fill_do_nothing()
     {
-        $htmlField = Html::make('Foo', fn() => 'bar');
+        $htmlField = Html::make('Foo', fn () => 'bar');
 
         $this->assertNull($htmlField->value);
         $htmlField->fill(new NovaRequest(), new Article());
