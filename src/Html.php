@@ -62,7 +62,7 @@ class Html extends Field
     public function jsonSerialize(): array
     {
         // AD-hoc for using filed in actions.
-        if ($this->resource && !$this->value && $this->attribute == 'TemporaryNotComputedField') {
+        if (!$this->value && $this->attribute == 'TemporaryNotComputedField') {
             $this->resolve($this->resource);
         }
 
